@@ -1,5 +1,6 @@
 # Python-Brainfuck-Interpreter
 A simple Brainfuck interpreter written in Python3.
+Now also ready for Python2.
 
 Example:
 
