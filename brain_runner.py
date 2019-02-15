@@ -3,6 +3,8 @@
 #  - Proper comments in the description and code
 #  - Usable Console interpretation
 
+from __future__ import print_function
+
 class Memory():
     def __init__(self, left, right):
         self.left = left
@@ -118,7 +120,13 @@ def run(file, input):
             index += 1
             continue
 
-    print('Done')
+    print('Done
+    if pointer < 0:
+        memory = [0]*abs(pointer) + memory
+        pointer = 0
+    if pointer >= len(memory):
+        memory.extend([0]*(pointer - len(memory) + 1))
+        
     print(memory)
     test = [0]*len(memory)
     test[pointer] = 1
