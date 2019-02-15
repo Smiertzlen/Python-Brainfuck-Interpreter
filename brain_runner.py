@@ -44,7 +44,7 @@ def run(file, input):
             if read in operation:
                 op_string += read
             read = f.read(1)
-    # op_string enthält nun alle operationen aus der Datei
+    # no op_string contains all brainfuck-only commands
 
 
     index = 0
@@ -53,7 +53,7 @@ def run(file, input):
     memory = [0]
     input_index = 0
 
-    # kann verbesser werden mit collections.deque (DLL!)
+    # may be improved with collections.deque
 
     while index < len(op_string):
         if op_string[index] == '<':
@@ -67,7 +67,7 @@ def run(file, input):
 
 
 
-        # an diesem Punkt muss der Speichereintrag, an den pointer zeigt, existieren
+        # at this point, the memory entry on which the pointer points, must exist
         if pointer < 0:
             memory = ([0]*abs(pointer)) + memory
             pointer = 0
@@ -81,7 +81,7 @@ def run(file, input):
                 loop_index.append(index)
                 index += 1
                 continue
-            # in this case, the loop will not be executed. Increase until found the corresponding ']
+            # in this case, the loop will not be executed. Increase until found the corresponding ']'
             depth = 1
             index += 1
             while depth:
@@ -120,7 +120,7 @@ def run(file, input):
             index += 1
             continue
 
-    print('Done
+    print('Done')
     if pointer < 0:
         memory = [0]*abs(pointer) + memory
         pointer = 0
